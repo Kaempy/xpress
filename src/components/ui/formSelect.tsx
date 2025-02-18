@@ -32,7 +32,7 @@ const FormSelect = ({ name, label, placeholder, options }: Props) => {
     <FormField
       control={control}
       name={name}
-      render={({ field: { onChange, value }, fieldState: { error } }) => (
+      render={({ field: { onChange, value } }) => (
         <FormItem className="space-y-0">
           <FormLabel className="text-sm font-medium text-title">
             {label}
