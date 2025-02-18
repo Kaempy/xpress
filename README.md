@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 XPress Rewards
 
-## Getting Started
+This project is designed to handle the registration, login, and dashboard functionalities for users of Xpress Rewards. It consists of the following key features:
 
-First, run the development server:
+User Registration: Users sign up by providing their business information, business address, and contact person information. They also create a password for secure login.
+User Login: Users can log in using the email and password they provided during registration.
+Dashboard: The dashboard is a view where partners can see the status of their verifiers (active, deactivated, awaiting activation). The dashboard displays this data in a table format, providing insights into their partners’ reward statuses.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+This project is built with:
+
+- React (Next.js) – Frontend framework
+- TypeScript – Strongly typed JavaScript
+- React Context API – State management for authentication
+- Zod – Schema validation
+- React Hook Form – Form handling
+- TanStack Table (React Table) – Data table with pagination
+- Tailwind CSS / ShadCN – UI styling
+- LocalStorage – Persistent authentication
+- ESLint, Prettier – Code quality & formatting
+
+## 📦 Installation
+
+Clone the repository and install dependencies:
+
+```sh
+# Clone the repository
+git clone https://github.com/Kaempy/xpress
+
+# Navigate to the project folder
+cd xpress
+
+# Install dependencies
+pnpm install  # or npm install / yarn install
+
+# Start the development server
+pnpm dev  # or npm run dev / yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 Authentication Flow
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔹 Signup Required
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Inter](https://vercel.com/font), a new font family for Vercel.
+- To experience the full authentication flow, users must sign up first. Only registered users can log in.
 
-## Learn More
+🔹 How It Works
 
-To learn more about Next.js, take a look at the following resources:
+- Upon signup, user details are stored in LocalStorage.
+- When logging in, the credentials are checked against the stored data.
+- A mock token is generated and stored in LocalStorage for session persistence.
+- Users can log out, which clears the stored authentication data.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✅ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] 🔹 User Signup & Login – Authentication with LocalStorage
+- [x] 🔹 Persistent Login – Maintains user session
+- [x] 🔹 Protected Routes – Restricts access to authenticated users
+- [x] 🔹 Table with Pagination & Filtering – Dynamic table with sorting and search
+- [x] 🔹 State Management – React Context API
 
-## Deploy on Vercel
+## 🛠️ Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sh
+pnpm lint # Run ESLint
+pnpm format # Format code using Prettier
+pnpm build # Build the production-ready app
+pnpm test # Run tests
+```
