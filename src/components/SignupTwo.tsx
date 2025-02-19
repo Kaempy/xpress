@@ -121,6 +121,7 @@ const SignupTwo = () => {
             <FormInput
               label="Contact Phone Number"
               name="user.phone_number"
+              limit={11}
               inputProps={{
                 type: 'tel',
               }}

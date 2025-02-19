@@ -54,6 +54,7 @@ const SignupOne = ({ setNext }: Props) => {
             <FormInput
               label="Business Phone Number"
               name="phone_number"
+              limit={11}
               inputProps={{
                 type: 'tel',
               }}
@@ -69,6 +70,7 @@ const SignupOne = ({ setNext }: Props) => {
             <FormInput
               label="Account No"
               name="acct_no"
+              limit={10}
               inputProps={{
                 type: 'number',
                 minLength: 10,

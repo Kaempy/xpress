@@ -16,7 +16,7 @@ const AuthLayout = ({ children }: Readonly<Props>) => {
     if (isAuth) {
       router.replace('/');
     }
-  }, [isAuth, router]);
+  }, [isAuth]);
   return (
     <main className="grid h-full min-h-screen items-center justify-center">
       <Navbar />

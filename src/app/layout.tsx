@@ -2,7 +2,6 @@ import { AuthProvider } from '@src/context/use-auth';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'sonner';
-import Wrapper from './Wrapper';
 import './globals.css';
 
 const inter = Inter({
@@ -29,20 +28,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <AuthProvider>
-          <Wrapper>
-            {children}
-            <Toaster
-              position="top-center"
-              closeButton
-              richColors
-              toastOptions={{
-                classNames: {
-                  description: 'text-[#606060]',
-                },
-              }}
-              theme="light"
-            />
-          </Wrapper>
+          {children}
+          <Toaster
+            position="top-center"
+            closeButton
+            richColors
+            toastOptions={{
+              classNames: {
+                description: 'text-[#606060]',
+              },
+            }}
+            theme="light"
+          />
         </AuthProvider>
       </body>
     </html>

@@ -12,7 +12,7 @@ const Wrapper = ({ children }: Readonly<{ children: ReactNode }>) => {
     if (!isAuth) {
       router.replace('/auth/login');
     }
-  }, [isAuth, router]);
+  }, [isAuth]);
   return children;
 };
 
